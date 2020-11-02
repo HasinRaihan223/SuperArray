@@ -21,6 +21,12 @@ public class SuperArray{
     return data[index];
   }
 
+  public String set(int index, String element){
+    String temp = data[index];
+    data[index] = element;
+    return temp;
+  }
+
   /*
   public static void main(String[]arg){
     SuperArray words = new SuperArray();
@@ -30,7 +36,14 @@ public class SuperArray{
     for(int i = 0; i < words.size(); i++){
       System.out.println( words.get(i) );
     }
+    System.out.println("Value I replaced");
+    System.out.println(words.set(0, "Boo"));
+    System.out.println("Changed array");
+    for(int i = 0; i < words.size(); i++){
+      System.out.println( words.get(i) );
+    }
   }
   */
+
 
 }
