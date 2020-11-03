@@ -7,6 +7,10 @@ public class SuperArray{
     data = new String[10];
   }
 
+  public SuperArray(int InitialCapacity){
+    data = new String[InitialCapacity];
+  }
+
   public int size(){
     return size;
   }
@@ -40,6 +44,50 @@ public class SuperArray{
 			newdata[i] = data[i];
 		}
     data = newdata;
+  }
+
+  public void clear(){
+    String[] temp = new String[10];
+    size = 0;
+    data = temp;
+  }
+
+  public boolean isEmpty(){
+    return (size()==0);
+  }
+
+  public String toString(){
+    String empty = "[";
+     for (int i = 0; i < size; i++) {
+      empty += data[i];
+      if (i != size-1)
+      empty += ", ";
+     }
+    empty += "]";
+    return empty;
+	 }
+
+  public boolean contains(String s){
+    for(int i = 0; i < data.length; i++){
+      if (data[i].equals(s)){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static void main(String[]args){
+    SuperArray words = new SuperArray();
+    words.add("kani");
+    words.add("uni");
+    words.add("ebi");
+    System.out.println(words.isEmpty());
+    SuperArray other = new SuperArray();
+    System.out.println(other.isEmpty());
+    System.out.println(words.toString());
+    System.out.println(words.contains("kani"));
+    words.clear();
+    System.out.println(words.toString());
   }
 
 }
