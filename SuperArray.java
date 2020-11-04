@@ -103,6 +103,17 @@ public class SuperArray{
     return temp;
   }
 
+  public int indexOf(String s){
+    int position = 0;
+    for (int i = 0; i < size; i++){
+      if (data[i].equals(s)){
+        position = i;
+        break;
+      }
+    }
+    return position;
+  }
+
   /*
   public static void main(String[]args){
     SuperArray words = new SuperArray();
@@ -112,6 +123,14 @@ public class SuperArray{
     words.add(2, "hello");
     System.out.println(words.toString());
     words.remove(1);
+    System.out.println(words.toString());
+    words.add("ebi");
+    words.add("ebi");
+    words.add("ebi");
+    words.add("kani");
+    words.add("kani");
+    words.add("uni");
+    System.out.println(words.indexOf("kani"));
     System.out.println(words.toString());
   }
   */
