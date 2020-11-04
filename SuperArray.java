@@ -92,6 +92,17 @@ public class SuperArray{
 		}
   }
 
+  public String remove(int index){
+    String temp = data[index];
+    if (index <= size || index > 0) {
+			for (int i = index; i < size-1; i++){
+        data[i] = data[i+1];
+      }
+      size--;
+		}
+    return temp;
+  }
+
   /*
   public static void main(String[]args){
     SuperArray words = new SuperArray();
@@ -99,6 +110,8 @@ public class SuperArray{
     words.add("uni");
     words.add("ebi");
     words.add(2, "hello");
+    System.out.println(words.toString());
+    words.remove(1);
     System.out.println(words.toString());
   }
   */
