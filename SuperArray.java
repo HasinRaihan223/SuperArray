@@ -8,6 +8,7 @@ public class SuperArray{
   }
 
   public SuperArray(int InitialCapacity){
+    size = 0;
     data = new String[InitialCapacity];
   }
 
@@ -76,18 +77,30 @@ public class SuperArray{
     return false;
   }
 
+  public void add(int index, String element){
+    if (index >= size) {
+			add(element);
+		}
+    else if (index >= 0) {
+			if (size == data.length)
+				resize();
+			for (int i = size; i > index; i--){
+        data[i] = data[i-1];
+      }
+			data[index] = element;
+			size++;
+		}
+  }
+
+  /*
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     words.add("kani");
     words.add("uni");
     words.add("ebi");
-    System.out.println(words.isEmpty());
-    SuperArray other = new SuperArray();
-    System.out.println(other.isEmpty());
-    System.out.println(words.toString());
-    System.out.println(words.contains("kani"));
-    words.clear();
+    words.add(2, "hello");
     System.out.println(words.toString());
   }
+  */
 
 }
