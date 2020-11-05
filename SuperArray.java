@@ -116,39 +116,10 @@ public class SuperArray{
 
   public String[] toArray(){
     String[] newdata = new String[size];
-    for(int i = 0; i < data.length; i++){
-      if (data[i]==null){
-        break;
-      }
-      else {
+    for(int i = 0; i < size; i++){
         newdata[i] = data[i];
       }
-    }
     return newdata;
   }
-
-  /*
-  public static void main(String[]args){
-    SuperArray words = new SuperArray();
-    words.add("kani");
-    words.add("uni");
-    words.add("ebi");
-    words.add(2, "hello");
-    System.out.println(words.toString());
-    words.remove(1);
-    System.out.println(words.toString());
-    words.add("ebi");
-    words.add("ebi");
-    words.add("ebi");
-    words.add("kani");
-    words.add("kani");
-    words.add("uni");
-    System.out.println(words.indexOf("kani"));
-    System.out.println(words.toString());
-    System.out.println(words.toArray());
-    System.out.println(words.toString());
-  }
-  */
-
 
 }

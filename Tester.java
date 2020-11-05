@@ -20,3 +20,28 @@ public class Tester {
         }
     }
 }
+
+//Tests for the new methods
+
+/*
+public static void main(String[]args){
+  SuperArray words = new SuperArray();
+  words.add("kani");
+  words.add("uni");
+  words.add("ebi");
+  words.add(2, "hello");
+  System.out.println(words.toString());
+  words.remove(1);
+  System.out.println(words.toString());
+  words.add("ebi");
+  words.add("ebi");
+  words.add("ebi");
+  words.add("kani");
+  words.add("kani");
+  words.add("uni");
+  System.out.println(words.indexOf("kani"));
+  System.out.println(words.toString());
+  System.out.println(words.toArray());
+  System.out.println(words.toString());
+}
+*/
