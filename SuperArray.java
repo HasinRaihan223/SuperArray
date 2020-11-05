@@ -114,6 +114,19 @@ public class SuperArray{
     return position;
   }
 
+  public String[] toArray(){
+    String[] newdata = new String[size];
+    for(int i = 0; i < data.length; i++){
+      if (data[i]==null){
+        break;
+      }
+      else {
+        newdata[i] = data[i];
+      }
+    }
+    return newdata;
+  }
+
   /*
   public static void main(String[]args){
     SuperArray words = new SuperArray();
@@ -132,7 +145,10 @@ public class SuperArray{
     words.add("uni");
     System.out.println(words.indexOf("kani"));
     System.out.println(words.toString());
+    System.out.println(words.toArray());
+    System.out.println(words.toString());
   }
   */
+
 
 }
