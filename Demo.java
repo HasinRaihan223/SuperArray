@@ -2,11 +2,26 @@ public class Demo{
 
   public static void removeDuplicates(SuperArray s){
     for(int i = 0; i < s.size(); i++){
-      String temp = s.get(i)
+      String temp = s.get(i);
       for(int j = s.size()-1; j > i ; j--){
-        if (temp.equals(s.get(j))) s.remove(j);
+        if (temp.equals(s.get(j))){
+          s.remove(j);
+        }
       }
     }
+  }
+
+  public static SuperArray findOverlap(SuperArray a, SuperArray b){
+    SuperArray c = new SuperArray();
+    for(int i = 0; i < a.size(); i++){
+      for(int j = 0; j < b.size(); j++){
+        if (a.get(i).equals(b.get(j))){
+          c.add(a.get(i));
+        }
+      }
+    }
+    removeDuplicates(c);
+    return c;
   }
 
   public static void main(String[]args){
