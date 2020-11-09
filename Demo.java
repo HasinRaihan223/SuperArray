@@ -24,6 +24,34 @@ public class Demo{
     return c;
   }
 
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    SuperArray c = new SuperArray();
+    int siz = 0;
+
+    if (a.size() > b.size()){
+      siz = b.size();
+      for(int i = 0; i < siz; i++){
+          c.add(a.get(i));
+          c.add(b.get(i));
+        }
+      for(int i = siz; i < a.size(); i++){
+        c.add(a.get(i));
+      }
+    }
+
+    else{
+      siz = a.size();
+      for(int i = 0; i < siz; i++){
+          c.add(a.get(i));
+          c.add(b.get(i));
+        }
+      for(int i = siz; i < b.size(); i++){
+          c.add(b.get(i));
+      }
+    }
+    return c;
+  }
+
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
@@ -34,12 +62,6 @@ public class Demo{
     System.out.println(words);
     removeDuplicates(words);
     System.out.println(words);
-
-    // SuperArray a1 = new SuperArray();
-    // a1.add("A");
-    // SuperArray b1 = new SuperArray();
-    // b1.add("A");
-    // System.out.println(a1.equals(b1));
   }
 
 }
