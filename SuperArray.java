@@ -136,7 +136,7 @@ public class SuperArray{
     if (this.size() == other.size()){
       for(int i = 0; i < size; i++){
         if (this.get(i).equals(other.get(i))) temp = true;
-        else temp = false;
+        else return false;
       }
     }
     return temp;
