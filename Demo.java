@@ -34,6 +34,12 @@ public class Demo{
     System.out.println(words);
     removeDuplicates(words);
     System.out.println(words);
+
+    // SuperArray a1 = new SuperArray();
+    // a1.add("A");
+    // SuperArray b1 = new SuperArray();
+    // b1.add("A");
+    // System.out.println(a1.equals(b1));
   }
 
 }

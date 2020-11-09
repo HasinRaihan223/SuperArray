@@ -69,7 +69,7 @@ public class SuperArray{
 	 }
 
   public boolean contains(String s){
-    for(int i = 0; i < data.length; i++){
+    for(int i = 0; i < size; i++){
       if (data[i].equals(s)){
         return true;
       }
@@ -82,8 +82,9 @@ public class SuperArray{
 			add(element);
 		}
     else if (index >= 0) {
-			if (size == data.length)
-				resize();
+			if (size == data.length){
+        resize();
+      }
 			for (int i = size; i > index; i--){
         data[i] = data[i-1];
       }
@@ -93,25 +94,24 @@ public class SuperArray{
   }
 
   public String remove(int index){
-    String temp = data[index];
-    if (index <= size || index > 0) {
-			for (int i = index; i < size-1; i++){
-        data[i] = data[i+1];
-      }
-      size--;
-		}
-    return temp;
-  }
+   String temp = data[index];
+   if (index < size || index >= 0) {
+     for (int i = index; i < size-1; i++){
+       data[i] = data[i+1];
+     }
+     data[size-1] = null;
+     size--;
+   }
+   return temp;
+ }
 
-  public int indexOf(String s){
-    int position = 0;
-    for (int i = 0; i < size; i++){
-      if (data[i].equals(s)){
-        position = i;
-        break;
+  public int indexOf(String s) {
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(s)) {
+        return i;
       }
     }
-    return position;
+    return -1;
   }
 
   public String[] toArray(){
@@ -120,6 +120,26 @@ public class SuperArray{
         newdata[i] = data[i];
       }
     return newdata;
+  }
+
+  public int lastIndexOf(String value){
+    for (int i = size-1; i > 0; i--) {
+      if (data[i].equals(value)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  public boolean equals(SuperArray other){
+    boolean temp = false;
+    if (this.size() == other.size()){
+      for(int i = 0; i < size; i++){
+        if (this.get(i).equals(other.get(i))) temp = true;
+        else temp = false;
+      }
+    }
+    return temp;
   }
 
 }
